@@ -1,6 +1,6 @@
 use std::ops::{Index, IndexMut};
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, PartialEq)]
 pub enum TileType {
     Occupied,
     Free,
@@ -12,19 +12,14 @@ pub struct Map {
 }
 
 impl Map {
-
     pub fn new((width, height): (usize, usize)) -> Map {
         let tiles = vec![TileType::Free; width * height];
-        Map {
-            width,
-            tiles,
-        }
+        Map { width, tiles }
     }
 
     pub fn size(&self) -> (usize, usize) {
         (self.width, self.tiles.len() / self.width)
     }
-
 }
 
 impl Index<(usize, usize)> for Map {

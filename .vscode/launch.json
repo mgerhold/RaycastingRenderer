@@ -7,6 +7,25 @@
         {
             "type": "lldb",
             "request": "launch",
+            "name": "Release executable 'raycasting_shooter'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=raycasting_shooter",
+                    "--package=raycasting_shooter",
+                    "--release"
+                ],
+                "filter": {
+                    "name": "raycasting_shooter",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
             "name": "Debug executable 'raycasting_shooter'",
             "cargo": {
                 "args": [
